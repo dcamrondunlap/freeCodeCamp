@@ -1,8 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-import { resolve } from "path"
+
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: 'Nuxt freeCodeCamp YouTube tutorial',
+      meta: [
+        {
+          name: "description",
+          content: "This is a course from youtube for Nuxt 3",
+        },
+      ],
+    },
+  },
   devtools: { enabled: true },
 
   alias: {
@@ -19,5 +30,9 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/content"]
+  modules: [
+    "@nuxt/content",
+    "@pinia/nuxt",
+  ],
+  ssr: false,
 })

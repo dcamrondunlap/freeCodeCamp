@@ -1,11 +1,10 @@
-<script lang="ts" setup>
-
+<script setup>
+const {data} = await useAsyncData('count', () => $fetch('api/count'));
 </script>
 
 <template>
   <div class="">
-    <NuxtLayout>
       <NuxtPage />
-    </NuxtLayout>
+      Page Visits: {{ data }}
   </div>
 </template>
